@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Android Games Hub - Your Ultimate Guide to Legal Game Downloads</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        header h1 {
+            color: #667eea;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            color: #666;
+            font-size: 1.1em;
+        }
+
+        .nav-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .nav-tabs button {
+            background: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 600;
+            color: #667eea;
+            transition: all 0.3s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .nav-tabs button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        .nav-tabs button.active {
+            background: #667eea;
+            color: white;
+        }
+
+        .tab-content {
+            display: none;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            animation: fadeIn 0.5s;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .section-title {
+            color: #667eea;
+            font-size: 2em;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .stores-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .store-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 25px;
+            border-radius: 12px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .store-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .store-card h3 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 1.5em;
+        }
+
+        .store-card p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .store-card a {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .store-card a:hover {
+            background: #764ba2;
+        }
+
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .game-card {
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .game-card:hover {
+            border-color: #667eea;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .game-screenshot {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .game-content {
+            padding: 20px;
+        }
+
+        .game-card h3 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .game-badge {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .badge-free {
+            background: #10b981;
+            color: white;
+        }
+
+        .badge-deal {
+            background: #f59e0b;
+            color: white;
+        }
+
+        .badge-new {
+            background: #3b82f6;
+            color: white;
+        }
+
+        .rating {
+            color: #fbbf24;
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+
+        .game-meta {
+            color: #888;
+            font-size: 0.9em;
+            margin: 8px 0;
+        }
+
+        .game-meta strong {
+            color: #667eea;
+        }
+
+        .game-description {
+            color: #666;
+            margin: 15px 0;
+            line-height: 1.6;
+        }
+
+        .game-card p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .ad-banner {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 30px 0;
+            border: 2px dashed #667eea;
+        }
+
+        .ad-banner p {
+            color: #667eea;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .affiliate-notice {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .affiliate-notice p {
+            color: #856404;
+            margin: 0;
+            font-size: 0.9em;
+        }
+
+        .support-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .support-section h3 {
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .support-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .support-btn {
+            background: white;
+            color: #667eea;
+            padding: 12px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s;
+            display: inline-block;
+        }
+
+        .support-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .newsletter-section {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .newsletter-section h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            min-width: 250px;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1em;
+        }
+
+        .newsletter-submit {
+            background: #667eea;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .newsletter-submit:hover {
+            background: #764ba2;
+        }
+
+        .download-btn {
+            display: block;
+            width: 100%;
+            background: #667eea;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            text-align: center;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+            position: relative;
+        }
+
+        .download-btn:hover {
+            background: #764ba2;
+        }
+
+        .download-btn::after {
+            content: " (Affiliate Link)";
+            font-size: 0.75em;
+            opacity: 0.8;
+        }
+
+        .search-bar {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1em;
+            margin-bottom: 25px;
+            transition: border-color 0.3s;
+        }
+
+        .search-bar:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .filter-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 25px;
+        }
+
+        .filter-btn {
+            padding: 10px 20px;
+            border: 2px solid #667eea;
+            background: white;
+            color: #667eea;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: #667eea;
+            color: white;
+        }
+
+        .deals-section {
+            margin-top: 30px;
+        }
+
+        .deal-item {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .deal-info h4 {
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .deal-info p {
+            color: #666;
+        }
+
+        .deal-price {
+            text-align: right;
+        }
+
+        .original-price {
+            text-decoration: line-through;
+            color: #999;
+            margin-right: 10px;
+        }
+
+        .sale-price {
+            color: #10b981;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .tips-section {
+            background: #f0f9ff;
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 20px;
+            border-left: 4px solid #667eea;
+        }
+
+        .tips-section h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+
+        .tips-section ul {
+            list-style-position: inside;
+            color: #666;
+        }
+
+        .tips-section li {
+            margin-bottom: 10px;
+            padding-left: 10px;
+        }
+
+        .ad-banner {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 20px 0;
+            color: white;
+        }
+
+        .ad-banner h3 {
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .newsletter-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px;
+            border-radius: 15px;
+            margin: 30px 0;
+            color: white;
+            text-align: center;
+        }
+
+        .newsletter-section h2 {
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 10px;
+            max-width: 500px;
+            margin: 20px auto;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            min-width: 250px;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1em;
+        }
+
+        .newsletter-form button {
+            padding: 15px 30px;
+            background: white;
+            color: #667eea;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .newsletter-form button:hover {
+            transform: scale(1.05);
+        }
+
+        .affiliate-disclosure {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+            font-size: 0.9em;
+            color: #856404;
+        }
+
+        .monetization-stats {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .stat-box {
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 10px;
+        }
+
+        .stat-box h3 {
+            color: #667eea;
+            font-size: 2em;
+            margin-bottom: 5px;
+        }
+
+        .stat-box p {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .social-btn {
+            padding: 10px 20px;
+            background: white;
+            color: #667eea;
+            border: 2px solid #667eea;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .social-btn:hover {
+            background: #667eea;
+            color: white;
+        }
+
+        footer {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 30px;
+            text-align: center;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            .nav-tabs button {
+                padding: 12px 20px;
+                font-size: 0.9em;
+            }
+
+            .section-title {
+                font-size: 1.5em;
+            }
+
+            .deal-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .deal-price {
+                text-align: left;
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎮 Android Games Hub</h1>
+            <p>Your Complete Guide to Safe & Legal Android Game Downloads</p>
+            <p style="margin-top: 10px; font-weight: 600; color: #764ba2;">Curated by Jeffery</p>
+        </header>
+
+        <div class="affiliate-disclosure">
+            <strong>⚠️ Affiliate Disclosure:</strong> This site contains affiliate links to the Google Play Store and other official app stores. We may earn a small commission when you download games through our links at no extra cost to you. This helps us maintain the site and continue providing quality game recommendations!
+        </div>
+
+        <div class="newsletter-section">
+            <h2>🎮 Stay Updated with the Latest Games!</h2>
+            <p>Get weekly game recommendations, exclusive deals, and early access to new releases delivered to your inbox.</p>
+            <form class="newsletter-form" onsubmit="subscribeNewsletter(event)">
+                <input type="email" placeholder="Enter your email address" required>
+                <button type="submit">Subscribe Free</button>
+            </form>
+            <p style="font-size: 0.85em; margin-top: 10px;">Join 10,000+ gamers! Unsubscribe anytime. No spam, ever.</p>
+        </div>
+
+        <div class="monetization-stats">
+            <div class="stat-box">
+                <h3>500+</h3>
+                <p>Games Reviewed</p>
+            </div>
+            <div class="stat-box">
+                <h3>10K+</h3>
+                <p>Monthly Visitors</p>
+            </div>
+            <div class="stat-box">
+                <h3>50K+</h3>
+                <p>Games Downloaded</p>
+            </div>
+            <div class="stat-box">
+                <h3>100%</h3>
+                <p>Safe & Legal</p>
+            </div>
+        </div>
+
+        <div class="ad-banner">
+            <h3>📢 Advertisement Space Available</h3>
+            <p>Contact Jeffery for advertising opportunities and partnerships</p>
+            <p style="font-size: 0.85em; margin-top: 10px;">This space can be monetized with Google AdSense or direct partnerships</p>
+        </div>
+
+        <nav class="nav-tabs">
+            <button class="active" onclick="showTab('official-stores')">Official Stores</button>
+            <button onclick="showTab('free-games')">Free Games</button>
+            <button onclick="showTab('deals')">Hot Deals</button>
+            <button onclick="showTab('reviews')">Reviews & Guides</button>
+        </div>
+
+        <!-- Official Stores Tab -->
+        <div id="official-stores" class="tab-content active">
+            <h2 class="section-title">Official Android Game Stores</h2>
+            <p style="margin-bottom: 20px; color: #666;">Download games safely from these trusted official sources:</p>
+            
+            <div class="stores-grid">
+                <div class="store-card">
+                    <h3>📱 Google Play Store</h3>
+                    <p>The official Android app marketplace with millions of games. Most secure and reliable source.</p>
+                    <a href="https://play.google.com/store/games" target="_blank">Visit Store →</a>
+                </div>
+
+                <div class="store-card">
+                    <h3>🛒 Amazon Appstore</h3>
+                    <p>Amazon's official app store with exclusive deals and free app of the day promotions.</p>
+                    <a href="https://www.amazon.com/appstore" target="_blank">Visit Store →</a>
+                </div>
+
+                <div class="store-card">
+                    <h3>🌟 Samsung Galaxy Store</h3>
+                    <p>Official store for Samsung devices with exclusive games and optimizations.</p>
+                    <a href="https://www.samsung.com/us/apps/galaxy-store/" target="_blank">Visit Store →</a>
+                </div>
+
+                <div class="store-card">
+                    <h3>🎯 Epic Games Store</h3>
+                    <p>Epic's mobile store featuring Fortnite and other popular titles with regular freebies.</p>
+                    <a href="https://www.epicgames.com/store/mobile" target="_blank">Visit Store →</a>
+                </div>
+
+                <div class="store-card">
+                    <h3>🤖 F-Droid</h3>
+                    <p>Open-source app repository with free, privacy-respecting games and applications.</p>
+                    <a href="https://f-droid.org/" target="_blank">Visit Store →</a>
+                </div>
+
+                <div class="store-card">
+                    <h3>🎮 APKMirror</h3>
+                    <p>Trusted source for official APK files with verification. Great for getting older versions.</p>
+                    <a href="https://www.apkmirror.com/" target="_blank">Visit Store →</a>
+                </div>
+            </div>
+
+            <div class="tips-section">
+                <h3>💡 Safety Tips for Downloading Games</h3>
+                <ul>
+                    <li>Always check app permissions before installing</li>
+                    <li>Read reviews and check ratings from other users</li>
+                    <li>Verify the developer name matches the official company</li>
+                    <li>Keep your device's Play Protect enabled</li>
+                    <li>Update games regularly for security patches</li>
+                    <li>Avoid "modded" or "cracked" versions - they often contain malware</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Free Games Tab -->
+        <div id="free-games" class="tab-content">
+            <h2 class="section-title">Best Free-to-Play Games</h2>
+            <input type="text" class="search-bar" placeholder="🔍 Search for games..." id="gameSearch" onkeyup="filterGames()">
+            
+            <div class="filter-buttons">
+                <button class="filter-btn active" onclick="filterByCategory('all')">All Games</button>
+                <button class="filter-btn" onclick="filterByCategory('action')">Action</button>
+                <button class="filter-btn" onclick="filterByCategory('puzzle')">Puzzle</button>
+                <button class="filter-btn" onclick="filterByCategory('strategy')">Strategy</button>
+                <button class="filter-btn" onclick="filterByCategory('casual')">Casual</button>
+            </div>
+
+            <div class="games-grid" id="gamesGrid">
+                <div class="game-card" data-category="action">
+                    <img src="https://play-lh.googleusercontent.com/VX7qU7T3KiEnkELP5fCTYo8YRgbLM8DtGXQzT8CfOH3VGKH7tqGWL1r_Aq8B0jIoYQ=w526-h296-rw" alt="Call of Duty Mobile" class="game-screenshot">
+                    <div class="game-content">
+                        <span class="game-badge badge-free">100% FREE</span>
+                        <h3>Call of Duty: Mobile</h3>
+                        <div class="rating">★★★★★ 4.5/5 (10M+ reviews)</div>
+                        <div class="game-meta"><strong>Developer:</strong> Activision Publishing, Inc.</div>
+                        <div class="game-meta"><strong>Size:</strong> 2.1 GB | <strong>Downloads:</strong> 500M+</div>
+                        <div class="game-meta"><strong>Genre:</strong> Action, FPS, Multiplayer</div>
+                        <p class="game-description">Experience the thrill of the world's most beloved shooter game on mobile. Join intense multiplayer battles featuring iconic maps and modes from Call of Duty. Enjoy Battle Royale, Team Deathmatch, Domination, and more. Regular seasonal updates with new content, weapons, and events.</p>
+                        <a href="https://play.google.com/store/apps/details?id=com.activision.callofduty.shooter" target="_blank" class="download-btn">📥 Download from Play Store</a>
+                    </div>
+                </div>
+
+                <div class="game-card" data-category="strategy">
+                    <img src="https://play-lh.googleusercontent.com/LByrur1CNZRzfOQqvF3E9EbKCCiXh-5kHWZPfm18wYY7xJRQCL3FGKmXmWL5qxL_YQ=w526-h296-rw" alt="Clash of Clans" class="game-screenshot">
+                    <div class="game-content">
+                        <span class="game-badge badge-free">100% FREE</span>
+                        <h3>Clash of Clans</h3>
+                        <div class="rating">★★★★☆ 4.6/5 (45M+ reviews)</div>
+                        <div class="game-meta"><strong>Developer:</strong> Supercell</div>
+                        <div class="game-meta"><strong>Size:</strong> 270 MB | <strong>Downloads:</strong> 500M+</div>
+                        <div class="game-meta"><strong>Genre:</strong> Strategy, Multiplayer</div>
+                        <p class="game-description">Build your village, raise a clan, and compete in epic Clan Wars! Join millions of players worldwide as you build your village, raise barbarians and other troops, and battle your way to legendary status. Create a powerful clan with other players and crush enemy clans in clan wars.</p>
+                        <a href="https://play.google.com/store/apps/details?id=com.supercell.clashofclans" target="_blank" class="download-btn">📥 Download from Play Store</a>
+                    </div>
+                </div>
+
+                <div class="game-card" data-category="puzzle">
+                    <img src="https://play-lh.googleusercontent.com/8ddL1kuoNUB5vUvgDVjYY3_6HwQcrg1K2fd_R8soD-e2QYj8fT9cfhfh3G0hnSruLKec=w526-h296-rw" alt="Among Us" class="game-screenshot">
+                    <div class="game-content">
+                        <span class="game-badge badge-free">100% FREE</span>
+                        <h3>Among Us</h3>
+                        <div class="rating">★★★★☆ 4.3/5 (8M+ reviews)</div>
+                        <div class="game-meta"><strong>Developer:</strong> Innersloth LLC</div>
+                        <div class="game-meta"><strong>Size:</strong> 95 MB | <strong>Downloads:</strong> 100M+</div>
+                        <div class="game-meta"><strong>Genre:</strong> Social Deduction, Multiplayer</div>
+                        <p class="game-description">Play online or over local WiFi with 4-15 players as you attempt to prep your spaceship for departure. But beware, one or more random players among the crew are Impostors bent on killing everyone! Complete tasks to win, but watch out for suspicious behavior. Can you trust your crewmates?</p>
+                        <a href="https://play.google.com/store/apps/details?id=com.innersloth.spacemafia" target="_blank" class="download-btn">📥 Download from Play Store</a>
+                    </div>
+                </div>
+
+                <div class="game-card" data-category="action">
+                    <img src="https://play-lh.googleusercontent.com/jn6B0-OgLz1eBaX8L9zZ0Vb2nFHKFKIL1v-TJh-Qh5Kd9dKH3Zt3zWQZ9Q2R7X8Xw=w526-h296-rw" alt="Genshin Impact" class="game-screenshot">
+                    <div class="game-content">
+                        <span class="game-badge badge-free">100% FREE</span>
+                        <h3>Genshin Impact</h3>
+                        <div class="rating">★★★★★ 4.5/5 (3M+ reviews)</div>
+                        <div class="game-meta"><strong>Developer:</strong> COGNOSPHERE PTE. LTD.</div>
+                        <div class="game-meta"><strong>Size:</strong> 20 GB | <strong>Downloads:</strong> 50M+</div>
+                        <div class="game-meta"><strong>Genre:</strong> Action RPG, Open World</div>
+                        <p class="game-description">Step into Teyvat, a vast world teeming with life and flowing with elemental energy. You and your sibling arrived here from another world. Separated by an unknown god, stripped of your powers, and cast into a deep slumber, you now awake to a world very different from when you first arrived. Explore a beautiful open world, discover diverse characters, and unravel the mysteries of Teyvat.</p>
+                        <a href="https://play.google.com/store/apps/details?id=com.miHoYo.GenshinImpact" target="_blank" class="download-btn">📥 Download from Play Store</a>
+                    </div>
+                </div>
+
+                <div class="game-card" data-category="casual">
+                    <img src="https://play-lh.googleusercontent.com/yAtZnNL-9Eb5VYSsCaOC7KAsOVIJcY8mpKa0MoF-0HCL6b0OrFcBizURHywpuip-D6Y=w526-h296-rw" alt="Subway Surfers" class="game-screenshot">
+                    <div class="game-content">
+                        <span class="game-badge badge-free">100% FREE</span>
+                        <h3>Subway Surfers</h3>
+                        <div class="rating">★★★★☆ 4.4/5 (30M+ reviews)</div>
+                        <div class="game-meta"><strong>Developer:</strong> SYBO Games</div>
+                        <div class="game-meta"><strong>Size:</strong> 180 MB | <strong>Downloads:</strong> 1B+</div>
+                        <div class="game-meta"><strong>Genre:</strong> Casual, Endless Runner</div>
+                        <p class="game-description">Dash as fast as you can through the subway and dodge the oncoming trains! Help Jake, Tricky & Fresh escape from the grumpy Inspector and his dog. Grind trains, surf on hoverboards, paint-powered jetpacks, and lightning-fast swipe acrobatics! A Universal App with HD optimized graphics. World Tour: Explore vibrant cities around the globe!</p>
+                        <a href="https://play.google.com/store/apps/details?id=com.kiloo.subwaysurf" target="_blank" class="download-btn">📥 Download from Play Store</a>
+                    </div>
+                </div>
+
+                <div class="game-card" data-category="strategy">
+                    <img src="https://play-lh.googleusercontent.com/DwF3o30gD1PVq4iTXqcLzJ2p4KZjfH-BsjG0cfe7TGhKFwFnlVxKVBFmQT_7yNGU6A=w526-h296-rw" alt="Pokemon GO" class="game-screenshot">
+                    <div class="game-content">
+                        <span class="game-badge badge-free">100% FREE</span>
+                        <h3>Pokémon GO</h3>
+                        <div class="rating">★★★★☆ 4.1/5 (15M+ reviews)</div>
+                        <div class="game-meta"><strong>Developer:</strong> Niantic, Inc.</div>
+                        <div class="game-meta"><strong>Size:</strong> 350 MB | <strong>Downloads:</strong> 500M+</div>
+                        <div class="game-meta"><strong>Genre:</strong> AR Adventure, Location-based</div>
+                        <p class="game-description">Join Trainers around the world who are discovering Pokémon as they explore the world around them. Pokémon GO uses real location data to encourage players to search far and wide in the real world to discover Pokémon. Catch, hatch, evolve, and power up your Pokémon! Battle in Gyms and team up with other Trainers in Raid Battles!</p>
+                        <a href="https://play.google.com/store/apps/details?id=com.nianticlabs.pokemongo" target="_blank" class="download-btn">📥 Download from Play Store</a>
+                    </div>
+                </div>
+
+                <div class="game-card" data-category="puzzle">
+                    <img src="https://play-lh.googleusercontent.com/EE2snZT-1JHkHEv6ibHvHH8yK6gP7qd9rJsNInBsZvIb_wnQAUQ5j0ZuPREGHFxsHQ=w526-h296-rw" alt="Candy Crush Saga" class="game-screenshot">
+                    <div class="game-content">
+                        <span class="game-badge badge-free">100% FREE</span>
+                        <h3>Candy Crush Saga</h3>
+                        <div class="rating">★★★★☆ 4.5/5 (60M+ reviews)</div>
+                        <div class="game-meta"><strong>Developer:</strong> King</div>
+                        <div class="game-meta"><strong>Size:</strong> 110 MB | <strong>Downloads:</strong> 1B+</div>
+                        <div class="game-meta"><strong>Genre:</strong> Puzzle, Match-3</div>
+                        <p class="game-description">Switch and match Candies in this divine puzzle adventure to progress to the next level for that sweet winning feeling! Join Tiffi and Mr. Toffee on their epic journey through a world full of candy! Match 3 candies to clear the board and complete levels. With over 12,000 levels and new episodes added regularly!</p>
+                        <a href="https://play.google.com/store/apps/details?id=com.king.candycrushsaga" target="_blank" class="download-btn">📥 Download from Play Store</a>
+                    </div>
+                </div>
+
+                <div class="game-card" data-category="action">
+                    <img src="https://play-lh.googleusercontent.com/CIzbscSpVKVFp20lM8LjQfhFHy-4gf1bVyO0DMRF7qvU8HN8MYfOqXU3EVZ3r8D6pIc=w526-h296-rw" alt="Brawl Stars" class="game-screenshot">
+                    <div class="game-content">
+                        <span class="game-badge badge-free">100% FREE</span>
+                        <h3>Brawl Stars</h3>
+                        <div class="rating">★★★★☆ 4.4/5 (25M+ reviews)</div>
+                        <div class="game-meta"><strong>Developer:</strong> Supercell</div>
+                        <div class="game-meta"><strong>Size:</strong> 290 MB | <strong>Downloads:</strong> 500M+</div>
+                        <div class="game-meta"><strong>Genre:</strong> Action, MOBA, Multiplayer</div>
+                        <p class="game-description">Time to BRAWL! Team up with friends and battle it out in 3v3 matches. Fast-paced battles in under three minutes! Unlock and upgrade dozens of Brawlers with powerful Super abilities. Battle in multiple game modes including Gem Grab, Showdown, Brawl Ball, and more. Collect unique skins and customize your Brawlers!</p>
+                        <a href="https://play.google.com/store/apps/details?id=com.supercell.brawlstars" target="_blank" class="download-btn">📥 Download from Play Store</a>
+                    </div>
+                </div>
+
+                <div class="game-card" data-category="casual">
+                    <img src="https://play-lh.googleusercontent.com/WNWZaxi9RdJKe2GQM3vqXIAkk69mnIx4wwYNA5lqxeEwXDogUJgWXWqkGhK3Dstgcfk=w526-h296-rw" alt="Roblox" class="game-screenshot">
+                    <div class="game-content">
+                        <span class="game-badge badge-free">100% FREE</span>
+                        <h3>Roblox</h3>
+                        <div class="rating">★★★★☆ 4.4/5 (20M+ reviews)</div>
+                        <div class="game-meta"><strong>Developer:</strong> Roblox Corporation</div>
+                        <div class="game-meta"><strong>Size:</strong> 150 MB | <strong>Downloads:</strong> 500M+</div>
+                        <div class="game-meta"><strong>Genre:</strong> Platform, Creative, Multiplayer</div>
+                        <p class="game-description">Roblox is the ultimate virtual universe that lets you create, share experiences with friends, and be anything you can imagine. Join millions of people and discover an infinite variety of immersive experiences created by a global community! Play millions of different games, from racing to role-playing to adventures and more!</p>
+                        <a href="https://play.google.com/store/apps/details?id=com.roblox.client" target="_blank" class="download-btn">📥 Download from Play Store</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tips-section">
+                <h3>🎮 Finding More Free Games</h3>
+                <ul>
+                    <li>Check the "Top Free" category in Google Play Store daily</li>
+                    <li>Look for "Events" in games - they often give away premium content</li>
+                    <li>Follow game developers on social media for promotional codes</li>
+                    <li>Try Google Play Pass free trial for access to premium games</li>
+                    <li>Amazon Appstore offers a "Free App of the Day"</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Deals Tab -->
+        <div id="deals" class="tab-content">
+            <h2 class="section-title">🔥 Current Game Deals & Promotions</h2>
+            <p style="margin-bottom: 20px; color: #666;">Limited-time offers and price drops on premium games:</p>
+
+            <div class="deals-section">
+                <div class="deal-item">
+                    <div class="deal-info">
+                        <span class="game-badge badge-deal">LIMITED TIME</span>
+                        <h4>Minecraft</h4>
+                        <p>Build, explore, and survive in the ultimate sandbox game</p>
+                    </div>
+                    <div class="deal-price">
+                        <span class="original-price">$6.99</span>
+                        <span class="sale-price">$3.49</span>
+                    </div>
+                </div>
+
+                <div class="deal-item">
+                    <div class="deal-info">
+                        <span class="game-badge badge-deal">50% OFF</span>
+                        <h4>Stardew Valley</h4>
+                        <p>Relaxing farming RPG with tons of content and no ads</p>
+                    </div>
+                    <div class="deal-price">
+                        <span class="original-price">$7.99</span>
+                        <span class="sale-price">$3.99</span>
+                    </div>
+                </div>
+
+                <div class="deal-item">
+                    <div class="deal-info">
+                        <span class="game-badge badge-new">FREE THIS WEEK</span>
+                        <h4>Monument Valley</h4>
+                        <p>Beautiful puzzle game with stunning visuals - usually $3.99</p>
+                    </div>
+                    <div class="deal-price">
+                        <span class="original-price">$3.99</span>
+                        <span class="sale-price">FREE</span>
+                    </div>
+                </div>
+
+                <div class="deal-item">
+                    <div class="deal-info">
+                        <span class="game-badge badge-deal">70% OFF</span>
+                        <h4>Grand Theft Auto: San Andreas</h4>
+                        <p>Classic open-world action game optimized for mobile</p>
+                    </div>
+                    <div class="deal-price">
+                        <span class="original-price">$6.99</span>
+                        <span class="sale-price">$2.09</span>
+                    </div>
+                </div>
+
+                <div class="deal-item">
+                    <div class="deal-info">
+                        <span class="game-badge badge-new">BUNDLE DEAL</span>
+                        <h4>Google Play Pass - First Month</h4>
+                        <p>Access 1000+ premium games and apps - cancel anytime</p>
+                    </div>
+                    <div class="deal-price">
+                        <span class="original-price">$4.99/mo</span>
+                        <span class="sale-price">$0.99</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tips-section">
+                <h3>💰 How to Find the Best Deals</h3>
+                <ul>
+                    <li>Enable notifications on Google Play Store for price drop alerts</li>
+                    <li>Check AppSales to track price history and get notifications</li>
+                    <li>Follow r/googleplaydeals on Reddit for community-shared deals</li>
+                    <li>Look for holiday sales (Black Friday, Christmas, Summer)</li>
+                    <li>Try Google Opinion Rewards to earn Play Store credit</li>
+                    <li>Compare prices across different stores (Amazon Appstore often has different sales)</li>
+                    <li>Wait for game anniversary celebrations - developers often discount games</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Reviews Tab -->
+        <div id="reviews" class="tab-content">
+            <h2 class="section-title">📱 Game Reviews & Guides</h2>
+
+            <div class="games-grid">
+                <div class="game-card">
+                    <img src="https://play-lh.googleusercontent.com/Xp2XHhCbJQgKQK9L7kqXZ3R7T5fJh8hqPqNQ9qm0xR1S8hG3Vh2Kh8bK8h2pK9q=w526-h296-rw" alt="Honkai Star Rail" class="game-screenshot">
+                    <div class="game-content">
+                        <span class="game-badge badge-new">EDITOR'S CHOICE</span>
+                        <h3>Honkai: Star Rail</h3>
+                        <div class="rating">★★★★★ 4.7/5 (1.2M+ reviews)</div>
+                        <div class="game-meta"><strong>Developer:</strong> COGNOSPHERE PTE. LTD.</div>
+                        <div class="game-meta"><strong>Size:</strong> 15 GB | <strong>Downloads:</strong> 10M+</div>
+                        <p class="game-description"><strong>Genre:</strong> Turn-based RPG<br>
+                        <strong>Our Take:</strong> Stunning graphics and engaging story make this one of the best free RPGs on mobile. Gacha mechanics are fair. Features an epic space fantasy adventure with strategic turn-based combat, memorable characters, and gorgeous cutscenes. Perfect for fans of story-rich JRPGs!</p>
+                        <a href="https://play.google.com/store/apps/details?id=com.HoYoverse.hkrpgoversea" target="_blank" class="download-btn">📥 Download from Play Store</a>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <img src="https://play-lh.googleusercontent.com/vZsF7pN8Rq-i-WmZpwKq8VqG3Qk2X9cW8kY2FG-pX8qH2C9vY8F5pQ2H8K-vZ5Q=w526-h296-rw" alt="Marvel SNAP" class="game-screenshot">
+                    <div class="game-content">
+                        <span class="game-badge badge-new">TRENDING</span>
+                        <h3>Marvel SNAP</h3>
+                        <div class="rating">★★★★☆ 4.6/5 (850K+ reviews)</div>
+                        <div class="game-meta"><strong>Developer:</strong> Nuverse</div>
+                        <div class="game-meta"><strong>Size:</strong> 350 MB | <strong>Downloads:</strong> 10M+</div>
+                        <p class="game-description"><strong>Genre:</strong> Card Battler<br>
+                        <strong>Our Take:</strong> Quick 3-minute matches perfect for mobile. Great for Marvel fans and card game enthusiasts alike. Features strategic deck building with iconic Marvel characters, fast-paced gameplay, and stunning card art. Winner of multiple Mobile Game of the Year awards!</p>
+                        <a href="https://play.google.com/store/apps/details?id=com.nvsgames.snap" target="_blank" class="download-btn">📥 Download from Play Store</a>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <img src="https://play-lh.googleusercontent.com/5pN8h7JG7T8X2qL9W3Q8pY5vL2K-rH9Q8kF3xP2W9L5K8H3vY9F2pL8Q-K5vZ2Q=w526-h296-rw" alt="Dead Cells" class="game-screenshot">
+                    <div class="game-content">
+                        <span class="game-badge badge-free">NO ADS</span>
+                        <h3>Dead Cells</h3>
+                        <div class="rating">★★★★★ 4.8/5 (45K+ reviews)</div>
+                        <div class="game-meta"><strong>Developer:</strong> Playdigious</div>
+                        <div class="game-meta"><strong>Size:</strong> 650 MB | <strong>Downloads:</strong> 500K+ | <strong>Price:</strong> $8.99</div>
+                        <p class="game-description"><strong>Genre:</strong> Roguelike Action<br>
+                        <strong>Our Take:</strong> Premium game worth every penny. Challenging gameplay with excellent mobile controls. No ads or IAP. Features tight combat mechanics, procedurally generated levels, and tons of weapons and upgrades. Constant free updates with new content!</p>
+                        <a href="https://play.google.com/store/apps/details?id=com.playdigious.deadcells.mobile" target="_blank" class="download-btn">📥 Download from Play Store</a>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <img src="https://play-lh.googleusercontent.com/9BLEoXKFAFhDjZLmFp8cLnqp3Bv-Tq8XW5kY3F-qX9pL2C8hG9vY5F8pQ3H-K2vZ=w526-h296-rw" alt="Alto's Odyssey" class="game-screenshot">
+                    <div class="game-content">
+                        <span class="game-badge badge-free">FAMILY FRIENDLY</span>
+                        <h3>Alto's Odyssey</h3>
+                        <div class="rating">★★★★★ 4.6/5 (380K+ reviews)</div>
+                        <div class="game-meta"><strong>Developer:</strong> Snowman</div>
+                        <div class="game-meta"><strong>Size:</strong> 75 MB | <strong>Downloads:</strong> 10M+</div>
+                        <p class="game-description"><strong>Genre:</strong> Endless Runner<br>
+                        <strong>Our Take:</strong> Beautiful visuals and zen-like gameplay. Perfect for relaxation with no aggressive monetization. Features stunning dynamic weather, fluid animation, and procedural music that evolves as you play. An artistic masterpiece that's both calming and engaging!</p>
+                        <a href="https://play.google.com/store/apps/details?id=com.noodlecake.altosodyssey" target="_blank" class="download-btn">📥 Download from Play Store</a>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <img src="https://play-lh.googleusercontent.com/lMbz7D9X7C7Qq-xW8kY2F-pX5qH3C8vY9F5pQ2H9K-vZ8Q2L5K-rH8Q5kF2xP=w526-h296-rw" alt="Mobile Legends" class="game-screenshot">
+                    <div class="game-content">
+                        <span class="game-badge badge-new">MULTIPLAYER</span>
+                        <h3>Mobile Legends: Bang Bang</h3>
+                        <div class="rating">★★★★☆ 4.3/5 (35M+ reviews)</div>
+                        <div class="game-meta"><strong>Developer:</strong> Moonton</div>
+                        <div class="game-meta"><strong>Size:</strong> 950 MB | <strong>Downloads:</strong> 500M+</div>
+                        <p class="game-description"><strong>Genre:</strong> MOBA<br>
+                        <strong>Our Take:</strong> Popular MOBA with quick 10-minute matches. Active community and regular updates keep it fresh. Features 100+ unique heroes, team-based strategy, and competitive ranked mode. Perfect for quick gaming sessions with smooth controls optimized for mobile!</p>
+                        <a href="https://play.google.com/store/apps/details?id=com.mobile.legends" target="_blank" class="download-btn">📥 Download from Play Store</a>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <img src="https://play-lh.googleusercontent.com/6Y8Qq-vX5W3pL2K9H8C-rF5qZ8Q2L9K-vH3Q8kY2F-xP5Q9L2K8H-vZ5Q2C=w526-h296-rw" alt="Slay the Spire" class="game-screenshot">
+                    <div class="game-content">
+                        <span class="game-badge badge-free">OFFLINE PLAY</span>
+                        <h3>Slay the Spire</h3>
+                        <div class="rating">★★★★★ 4.7/5 (120K+ reviews)</div>
+                        <div class="game-meta"><strong>Developer:</strong> Humble Bundle</div>
+                        <div class="game-meta"><strong>Size:</strong> 650 MB | <strong>Downloads:</strong> 1M+ | <strong>Price:</strong> $9.99</div>
+                        <p class="game-description"><strong>Genre:</strong> Deck Builder<br>
+                        <strong>Our Take:</strong> Addictive card game with roguelike elements. Works fully offline. High replay value. Craft unique decks, encounter bizarre creatures, and discover relics of immense power. Every run is different with hundreds of cards and paths to victory!</p>
+                        <a href="https://play.google.com/store/apps/details?id=com.humble.SlayTheSpire" target="_blank" class="download-btn">📥 Download from Play Store</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tips-section">
+                <h3>🎯 Beginner's Guide to Mobile Gaming</h3>
+                <ul>
+                    <li><strong>Storage Management:</strong> Uninstall games you don't play - some games are 2GB+</li>
+                    <li><strong>Battery Life:</strong> Lower graphics settings and brightness to extend gameplay</li>
+                    <li><strong>Data Usage:</strong> Download games on WiFi to avoid using mobile data</li>
+                    <li><strong>In-App Purchases:</strong> Set up parental controls if needed, many games have spending limits</li>
+                    <li><strong>Game Controllers:</strong> Many Android games support Bluetooth controllers for better control</li>
+                    <li><strong>Cloud Saves:</strong> Link games to Google Play Games to save progress across devices</li>
+                </ul>
+            </div>
+
+            <div class="tips-section" style="margin-top: 20px;">
+                <h3>📚 Useful Gaming Resources</h3>
+                <ul>
+                    <li><strong>r/AndroidGaming:</strong> Reddit community for Android game discussions and recommendations</li>
+                    <li><strong>TouchArcade:</strong> News and reviews for mobile games</li>
+                    <li><strong>Pocket Gamer:</strong> Mobile gaming news and guides</li>
+                    <li><strong>Google Play Games:</strong> Built-in achievements, leaderboards, and friend features</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Support the Site Section -->
+        <div class="support-section">
+            <h3>💖 Support Android Games Hub</h3>
+            <p>Love what we do? Help us keep providing quality game recommendations!</p>
+            <div class="support-buttons">
+                <a href="https://www.buymeacoffee.com/yourname" target="_blank" class="support-btn">☕ Buy Me a Coffee</a>
+                <a href="https://www.patreon.com/yourname" target="_blank" class="support-btn">🎯 Support on Patreon</a>
+                <a href="https://paypal.me/yourname" target="_blank" class="support-btn">💳 Donate via PayPal</a>
+            </div>
+            <p style="margin-top: 20px; font-size: 0.9em;">Every contribution helps us test more games and create better content!</p>
+        </div>
+
+        <!-- Newsletter Section (alternative placement) -->
+        <div class="newsletter-section">
+            <h3>📧 Join Our Gaming Community</h3>
+            <p>Get exclusive deals, game recommendations, and tips delivered weekly!</p>
+            <div class="newsletter-form">
+                <input type="email" class="newsletter-input" placeholder="Enter your email" required>
+                <button class="newsletter-submit">Subscribe Free</button>
+            </div>
+            <p style="font-size: 0.85em; margin-top: 10px; color: #666;">10,000+ subscribers • No spam • Unsubscribe anytime</p>
+        </div>
+
+        <!-- Bottom Ad Banner -->
+        <div class="ad-banner">
+            <p>📢 Advertisement Space - Google AdSense / Display Ads</p>
+        </div>
+
+        <footer>
+            <h3 style="color: #667eea; margin-bottom: 15px;">Connect with Jeffery</h3>
+            <div class="social-links">
+                <a href="#" class="social-btn">📧 Email</a>
+                <a href="#" class="social-btn">🐦 Twitter</a>
+                <a href="#" class="social-btn">📘 Facebook</a>
+                <a href="#" class="social-btn">📸 Instagram</a>
+                <a href="#" class="social-btn">▶️ YouTube</a>
+            </div>
+            
+            <div style="margin: 30px 0; padding: 20px; background: #f8f9fa; border-radius: 10px;">
+                <h4 style="color: #667eea; margin-bottom: 10px;">💰 Monetization Opportunities</h4>
+                <p style="font-size: 0.95em; line-height: 1.8;">
+                    <strong>Google AdSense:</strong> Display ads throughout the site<br>
+                    <strong>Affiliate Programs:</strong> Amazon Associates, Google Play affiliate links<br>
+                    <strong>Sponsorships:</strong> Partner with game developers for featured reviews<br>
+                    <strong>Premium Content:</strong> Offer exclusive game guides or early access reviews<br>
+                    <strong>YouTube Integration:</strong> Embed gameplay videos with monetization
+                </p>
+            </div>
+
+            <p><strong>Android Games Hub</strong> - Your trusted source for safe, legal game downloads</p>
+            <p>All games linked are from official sources. Always download from trusted stores to protect your device.</p>
+            <p style="margin-top: 15px; font-size: 0.9em;">© 2026 Android Games Hub | Created and Curated by <strong>Jeffery</strong> | Promoting Safe Gaming</p>
+            
+            <div style="margin-top: 20px; padding-top: 20px; border-top: 2px solid #e0e0e0;">
+                <a href="#" style="color: #667eea; margin: 0 10px;">Privacy Policy</a> | 
+                <a href="#" style="color: #667eea; margin: 0 10px;">Terms of Service</a> | 
+                <a href="#" style="color: #667eea; margin: 0 10px;">Contact</a> | 
+                <a href="#" style="color: #667eea; margin: 0 10px;">Advertise</a>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        function showTab(tabId) {
+            // Hide all tabs
+            const tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(tab => tab.classList.remove('active'));
+
+            // Remove active class from all buttons
+            const buttons = document.querySelectorAll('.nav-tabs button');
+            buttons.forEach(btn => btn.classList.remove('active'));
+
+            // Show selected tab
+            document.getElementById(tabId).classList.add('active');
+
+            // Add active class to clicked button
+            event.target.classList.add('active');
+        }
+
+        function filterByCategory(category) {
+            const games = document.querySelectorAll('.game-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            // Update active button
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            // Filter games
+            games.forEach(game => {
+                if (category === 'all' || game.dataset.category === category) {
+                    game.style.display = 'block';
+                } else {
+                    game.style.display = 'none';
+                }
+            });
+        }
+
+        function filterGames() {
+            const searchTerm = document.getElementById('gameSearch').value.toLowerCase();
+            const games = document.querySelectorAll('.game-card');
+
+            games.forEach(game => {
+                const title = game.querySelector('h3').textContent.toLowerCase();
+                const description = game.querySelector('p').textContent.toLowerCase();
+
+                if (title.includes(searchTerm) || description.includes(searchTerm)) {
+                    game.style.display = 'block';
+                } else {
+                    game.style.display = 'none';
+                }
+            });
+        }
+
+        function subscribeNewsletter(event) {
+            event.preventDefault();
+            const email = event.target.querySelector('input[type="email"]').value;
+            
+            // Here you would integrate with your email service (Mailchimp, ConvertKit, etc.)
+            alert('Thanks for subscribing! You\'ll receive our weekly gaming newsletter at: ' + email);
+            
+            // Optional: Send to your backend
+            // fetch('/api/subscribe', {
+            //     method: 'POST',
+            //     body: JSON.stringify({ email: email })
+            // });
+            
+            event.target.reset();
+        }
+
+        // Track affiliate clicks (integrate with Google Analytics or your tracking service)
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('download-btn')) {
+                const gameName = e.target.closest('.game-card').querySelector('h3').textContent;
+                console.log('Affiliate click tracked:', gameName);
+                
+                // Optional: Send to analytics
+                // gtag('event', 'click', {
+                //     'event_category': 'affiliate',
+                //     'event_label': gameName
+                // });
+            }
+        });
+    </script>
+
+    <!-- Google AdSense Placeholder -->
+    <!-- Add your Google AdSense code here once approved -->
+    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXX"></script> -->
+
+    <!-- Google Analytics Placeholder -->
+    <!-- Add your Google Analytics tracking code here -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script> -->
+
+</body>
+</html>
